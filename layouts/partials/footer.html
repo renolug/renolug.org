@@ -1,0 +1,32 @@
+{{ $l := .Site.Params.links }}
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-col">
+      <p class="footer-brand">Reno Linux Users Group</p>
+      <p class="footer-note">A community for Linux and open source enthusiasts in the Reno&nbsp;/&nbsp;Tahoe area.</p>
+    </div>
+
+    <div class="footer-col">
+      <h2 class="footer-head">Connect</h2>
+      <ul class="footer-links">
+        {{ with $l.mailinglist }}<li><a href="{{ . }}">Mailing list</a></li>{{ end }}
+        {{ with $l.signal }}<li><a href="{{ . }}">Chat group</a></li>{{ end }}
+        {{ with $l.bluesky }}<li><a href="{{ . }}" rel="me">Bluesky</a></li>{{ end }}
+        {{ with $l.github }}<li><a href="{{ . }}">GitHub</a></li>{{ end }}
+        {{ with .Site.Params.email }}<li><a href="mailto:{{ . }}">Email</a></li>{{ end }}
+      </ul>
+    </div>
+
+    {{ with hugo.Data.sponsors.sponsor }}
+    <div class="footer-col">
+      <h2 class="footer-head">Backed by</h2>
+      <ul class="footer-sponsors">
+        {{ range . }}
+          <li><a href="{{ .url }}">{{ .name }}</a></li>
+        {{ end }}
+      </ul>
+      <p class="footer-note"><a href="{{ "/about#sponsors" | relURL }}">Sponsor RLUG →</a></p>
+    </div>
+    {{ end }}
+  </div>
+</footer>

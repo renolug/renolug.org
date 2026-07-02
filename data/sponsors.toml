@@ -1,0 +1,10 @@
+# Sponsors are rendered as a grid on the homepage and About page.
+# Add another sponsor by copying a [[sponsor]] block. Logos live in
+# static/img/sponsors/. "tier" is free-form; "primary" sponsors render larger.
+
+[[sponsor]]
+  name = "CIQ"
+  url = "https://ciq.com"
+  logo = "/img/sponsors/ciq.svg"
+  tier = "primary"
+  blurb = "Software infrastructure built for complete control in the age of AI."

@@ -1,0 +1,58 @@
+baseURL = "https://renolug.org/"
+title = "Reno Linux Users Group"
+
+[languages.en]
+  label = "English"
+  locale = "en-US"
+enableRobotsTXT = true
+
+# Don't fail the build over the placeholder emails / draft links.
+ignoreLogs = ['warning-goldmark-raw-html']
+
+[params]
+  description = "The Reno Linux Users Group (RLUG) — a community for Linux and open source enthusiasts in the Reno / Tahoe area."
+  tagline = "Linux and open source, back in Reno."
+  # Temporary contact email until a group address is set up.
+  email = "brian@ciq.com"
+
+  # Social / community links. Empty values are hidden automatically.
+  [params.links]
+    mailinglist = "https://groups.google.com/g/renolug"
+    github = "https://github.com/renolug"
+    bluesky = "https://bsky.app/profile/renolug.org"
+    # Clean on-site path; redirected to the Signal invite via static/_redirects.
+    signal = "/signal"
+
+  # Self-hosted Plausible analytics. Loaded only in production builds.
+  [params.analytics]
+    src = "https://pbl.tiuxo.com/js/pa-D2Utx9Ots-hD6Su1qBGaW.js"
+
+[menus]
+  [[menus.main]]
+    name = "Meetings"
+    pageRef = "/meetings"
+    weight = 10
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 20
+  [[menus.main]]
+    name = "Resources"
+    pageRef = "/resources"
+    weight = 30
+  [[menus.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+
+[build]
+  [[build.cachebusters]]
+    source = "assets/.*\\.css"
+    target = "css"

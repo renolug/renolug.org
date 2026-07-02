@@ -1,0 +1,48 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap hero-inner">
+    <p class="hero-kicker">Est. 2002 · revived 2026</p>
+    <h1 class="hero-title">The Reno Linux Users Group is back!</h1>
+    <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
+    <p class="hero-lead">{{ .Content | plainify | truncate 260 }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ "/meetings" | relURL }}">Upcoming meetings</a>
+      {{ with .Site.Params.links.mailinglist }}<a class="btn" href="{{ . }}">Join the mailing list</a>{{ end }}
+      {{ with .Site.Params.links.signal }}<a class="btn" href="{{ . }}">Join the group chat</a>{{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap prose">
+    {{ .Content }}
+  </div>
+</section>
+
+<section class="section quicklinks">
+  <div class="wrap">
+    <div class="card-grid">
+      <a class="link-card" href="{{ "/meetings" | relURL }}">
+        <h2>Meetings</h2>
+        <p>Our first meeting since the revival is being scheduled — details soon.</p>
+      </a>
+      <a class="link-card" href="{{ .Site.Params.links.signal }}">
+        <h2>Group chat</h2>
+        <p>Hop into the group chat to talk Linux and coordinate in real time.</p>
+      </a>
+      <a class="link-card" href="{{ "/resources" | relURL }}">
+        <h2>Resources</h2>
+        <p>Distros, docs, and local tech links to help you get started.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section sponsors" id="sponsors">
+  <div class="wrap">
+    <h2 class="section-head">Backed by</h2>
+    <p class="section-sub">RLUG's revival is made possible by our sponsors. Interested in supporting a local Linux community? <a href="mailto:{{ .Site.Params.email }}">Get in touch.</a></p>
+    {{ partial "sponsors.html" . }}
+  </div>
+</section>
+{{ end }}

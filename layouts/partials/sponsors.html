@@ -1,0 +1,11 @@
+{{/* Reusable sponsor grid. Usage: {{ partial "sponsors.html" . }} */}}
+{{ with hugo.Data.sponsors.sponsor }}
+<div class="sponsor-grid">
+  {{ range . }}
+  <a class="sponsor-card{{ if eq .tier "primary" }} sponsor-primary{{ end }}" href="{{ .url }}">
+    {{ if .logo }}<img src="{{ .logo }}" alt="{{ .name }}" loading="lazy">{{ else }}<span class="sponsor-name">{{ .name }}</span>{{ end }}
+    {{ with .blurb }}<span class="sponsor-blurb">{{ . }}</span>{{ end }}
+  </a>
+  {{ end }}
+</div>
+{{ end }}
