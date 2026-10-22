@@ -17,13 +17,11 @@
 
     {{ partial "meeting-facts.html" . }}
 
-    {{ if not $past }}
+    {{ if not $past }}{{ with $e.register }}
     <p class="meeting-actions">
-      {{ with $e.register }}<a class="btn btn-primary" href="{{ . }}">Register for the meeting</a>{{ end }}
-      {{ with site.Params.links.mailinglist }}<a class="btn" href="{{ . }}">Join the mailing list</a>{{ end }}
-      {{ with site.Params.links.signal }}<a class="btn" href="{{ . }}">Join the Signal group</a>{{ end }}
+      <a class="btn btn-primary" href="{{ . }}">Register for the meeting</a>
     </p>
-    {{ end }}
+    {{ end }}{{ end }}
 
     {{ if partial "cfp-open.html" . }}{{ partial "cfp.html" . }}{{ end }}
 
