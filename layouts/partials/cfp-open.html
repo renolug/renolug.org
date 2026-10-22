@@ -1,0 +1,23 @@
+{{/*
+  Reports whether a meeting's call for presenters is currently open.
+
+  Open requires all three:
+    1. `cfp.open` is true in the meeting's front matter,
+    2. the meeting hasn't happened yet,
+    3. `cfp.deadline` is unset or still in the future.
+
+  So a call closes itself once the meeting passes (or the deadline lapses)
+  without anyone having to remember to switch it off.
+
+  Usage: {{ if partial "cfp-open.html" . }}
+*/}}
+{{- $open := false -}}
+{{- with .Params.cfp -}}
+  {{- if .open -}}
+    {{- $open = ge (partial "meeting-ends.html" $).Unix now.Unix -}}
+    {{- with .deadline -}}
+      {{- $open = and $open (ge (time.AsTime .).Unix now.Unix) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $open -}}

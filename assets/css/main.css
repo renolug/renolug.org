@@ -248,6 +248,39 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -.01em; }
 .callout p:first-child { margin-top: 0; }
 .callout p:last-child { margin-bottom: 0; }
 .callout-muted { border-left-color: var(--text-muted); color: var(--text-muted); }
+.callout-cfp { background: color-mix(in srgb, var(--accent) 7%, var(--surface)); }
+.callout-cfp .meeting-actions { margin-bottom: 0; }
+
+.cfp-formats {
+  list-style: none;
+  padding: 0;
+  margin: .75rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.cfp-formats li {
+  font-size: .9rem;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: .25rem .75rem;
+}
+.cfp-deadline { font-size: .95rem; color: var(--text-muted); }
+
+/* ---------- Badge ---------- */
+.badge {
+  display: inline-block;
+  margin: 0 0 .5rem;
+  padding: .15rem .6rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
 
 /* ---------- Cards / quick links ---------- */
 .quicklinks { background: var(--bg-alt); border-block: 1px solid var(--border); }

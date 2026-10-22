@@ -19,6 +19,11 @@ event:
   speakerOrg: "CIQ"
   cost: "Free — everyone welcome, lunch included"
   register: "https://events.ciq.com/reno-lug-tech-consortium-networking"
+
+# Call for presenters. Closes itself once the meeting passes; `deadline` and
+# `note` are optional. See layouts/partials/cfp-open.html.
+cfp:
+  open: true
 ---
 
 <div class="callout">

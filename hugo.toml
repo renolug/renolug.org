@@ -35,6 +35,15 @@ ignoreLogs = ['warning-goldmark-raw-html']
     # Clean on-site path; redirected to the Signal invite via static/_redirects.
     signal = "/signal"
 
+  # Talk formats advertised when a meeting's call for presenters is open.
+  # Toggle a call on with `cfp.open: true` in that meeting's front matter.
+  [params.cfp]
+    formats = [
+      "Lightning talk — 5–10 minutes",
+      "Short talk or demo — 15–20 minutes",
+      "Feature talk — 30–45 minutes",
+    ]
+
   # Self-hosted Plausible analytics. Loaded only in production builds.
   [params.analytics]
     src = "https://pbl.tiuxo.com/js/pa-D2Utx9Ots-hD6Su1qBGaW.js"

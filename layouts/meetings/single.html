@@ -25,6 +25,8 @@
     </p>
     {{ end }}
 
+    {{ if partial "cfp-open.html" . }}{{ partial "cfp.html" . }}{{ end }}
+
     {{ .Content }}
   </div>
 </article>

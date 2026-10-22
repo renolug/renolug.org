@@ -1,0 +1,39 @@
+{{/*
+  Call-for-presenters callout, shown on a meeting page while its call is open.
+  Talk formats come from [params.cfp] in hugo.toml; submissions go to the
+  mailing list.
+*/}}
+{{- $cfp := .Params.cfp | default dict -}}
+<div class="callout callout-cfp">
+
+<p><strong>Call for presenters — open.</strong> We’ve got room for a few
+community talks at this meeting. Lightning talk, demo, war story, or something
+you’ve been hacking on at home — if it’s interesting to Linux folks, we want to
+hear it.</p>
+
+{{- with $cfp.note }}
+<p>{{ . }}</p>
+{{- end }}
+
+{{- with site.Params.cfp.formats }}
+<ul class="cfp-formats">
+  {{- range . }}
+  <li>{{ . }}</li>
+  {{- end }}
+</ul>
+{{- end }}
+
+{{- with $cfp.deadline }}
+<p class="cfp-deadline">Submissions close {{ (time.AsTime .).Format "Monday, January 2" }}.</p>
+{{- end }}
+
+<p class="meeting-actions">
+  {{- with site.Params.links.mailinglist }}
+  <a class="btn btn-primary" href="{{ . }}">Pitch a talk on the mailing list</a>
+  {{- end }}
+  {{- with site.Params.links.signal }}
+  <a class="btn" href="{{ . }}">Or ask in the group chat</a>
+  {{- end }}
+</p>
+
+</div>
