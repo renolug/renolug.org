@@ -8,8 +8,6 @@ New to Linux, or just looking for good references? Here's a starter kit. This
 list is intentionally short and opinionated — suggestions are welcome on the
 [mailing list](https://groups.google.com/g/renolug).
 
-## Getting started with Linux
-
 ## Pick a distribution
 
 - [Rocky Linux](https://rockylinux.org/) — enterprise-grade, RHEL-compatible.

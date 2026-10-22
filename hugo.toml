@@ -6,6 +6,10 @@ title = "Reno Linux Users Group"
   locale = "en-US"
 enableRobotsTXT = true
 
+# No blog yet, so /categories/ and /tags/ would only ever be empty pages
+# cluttering the sitemap.
+disableKinds = ["taxonomy", "term"]
+
 # Don't fail the build over the placeholder emails / draft links.
 ignoreLogs = ['warning-goldmark-raw-html']
 

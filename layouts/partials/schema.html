@@ -1,0 +1,57 @@
+{{/*
+  schema.org JSON-LD. Emits an Organization node on the home page and an Event
+  node on any page carrying an `event` map in its front matter (see
+  content/meetings.md). Built as Go maps and passed through jsonify so the
+  output is always valid JSON.
+*/}}
+{{- $nodes := slice -}}
+
+{{- if .IsHome -}}
+  {{- $sameAs := slice -}}
+  {{- range $key, $url := site.Params.links -}}
+    {{- if and $url (hasPrefix $url "http") -}}
+      {{- $sameAs = $sameAs | append $url -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $org := dict
+    "@type" "Organization"
+    "@id" (printf "%s#organization" site.BaseURL)
+    "name" site.Title
+    "alternateName" "RLUG"
+    "url" site.BaseURL
+    "description" site.Params.description
+    "logo" ("/img/og.png" | absURL)
+  -}}
+  {{- with $sameAs }}{{ $org = merge $org (dict "sameAs" .) }}{{ end -}}
+  {{- $nodes = $nodes | append $org -}}
+{{- end -}}
+
+{{- with .Params.event -}}
+  {{- $address := dict "@type" "PostalAddress" "addressLocality" .locality "addressRegion" .region "addressCountry" "US" -}}
+  {{- $event := dict
+    "@type" "Event"
+    "name" .name
+    "description" (.description | plainify | chomp)
+    "startDate" .start
+    "endDate" .end
+    "eventStatus" "https://schema.org/EventScheduled"
+    "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
+    "image" ("/img/og.png" | absURL)
+    "location" (dict "@type" "Place" "name" .venue "address" $address)
+    "organizer" (dict "@type" "Organization" "name" site.Title "url" site.BaseURL)
+    "offers" (dict
+      "@type" "Offer"
+      "price" "0"
+      "priceCurrency" "USD"
+      "availability" "https://schema.org/InStock"
+      "url" (or .url $.Permalink)
+    )
+  -}}
+  {{- with .performer }}{{ $event = merge $event (dict "performer" (dict "@type" "Person" "name" .)) }}{{ end -}}
+  {{- $nodes = $nodes | append $event -}}
+{{- end -}}
+
+{{- with $nodes }}
+{{/* safeJS: jsonify already escapes <, > and & as \uXXXX, so this can't break out of the script tag. */}}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@graph" .) | jsonify | safeJS }}</script>
+{{- end -}}

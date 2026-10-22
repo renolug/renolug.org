@@ -2,6 +2,22 @@
 title: "Meetings"
 subtitle: "When and where we get together."
 description: "Details on upcoming Reno Linux Users Group meetings."
+
+# Drives the schema.org Event markup in layouts/partials/schema.html.
+event:
+  name: "Reno LUG: Infrastructure Security, CVE Remediation & Networking"
+  description: >-
+    A morning of technical talks and networking with the Reno Linux, HPC, and
+    IT infrastructure community, featuring a session on CVE remediation and
+    securing Linux infrastructure.
+  # RFC 3339, local time with offset. Nov 2 is after DST ends, so PST (-08:00).
+  start: "2026-11-02T11:00:00-08:00"
+  end: "2026-11-02T14:00:00-08:00"
+  venue: "CIQ — Reno Office"
+  locality: "Reno"
+  region: "NV"
+  performer: "Patrick Swartz"
+  url: "https://events.ciq.com/reno-lug-tech-consortium-networking"
 ---
 
 <div class="callout">
