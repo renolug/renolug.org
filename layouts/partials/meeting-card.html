@@ -7,8 +7,8 @@
     <span class="meeting-item-year">{{ .Date.Format "2006" }}</span>
   </p>
   <div class="meeting-item-body">
-    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-    {{ if partial "cfp-open.html" . }}<p class="badge">Call for presenters</p>{{ end }}
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{- if partial "cfp-open.html" . }} <span class="badge">Call for presenters</span>{{ end }}</h3>
     {{ with .Description }}<p class="meeting-item-desc">{{ . }}</p>{{ end }}
     <p class="meeting-item-meta">
       {{ .Date.Format "3:04 PM" }}{{ with $e.end }} – {{ (time.AsTime .).Format "3:04 PM" }}{{ end }}

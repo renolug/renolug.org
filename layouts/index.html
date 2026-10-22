@@ -4,7 +4,7 @@
     <p class="hero-kicker">Est. 2002 · revived 2026</p>
     <h1 class="hero-title">The Reno Linux Users Group is back!</h1>
     <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
-    <p class="hero-lead">{{ .Content | plainify | truncate 260 }}</p>
+    <p class="hero-lead">{{ .Params.lead }}</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="{{ "/meetings" | relURL }}">Nov 2 — our first meeting</a>
       {{ with .Site.Params.links.mailinglist }}<a class="btn" href="{{ . }}">Join the mailing list</a>{{ end }}
@@ -13,7 +13,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section section-center">
   <div class="wrap prose">
     {{ .Content }}
   </div>
@@ -24,7 +24,7 @@
     <div class="card-grid">
       <a class="link-card" href="{{ "/meetings" | relURL }}">
         <h2>Meetings</h2>
-        <p>Monday, November 2nd, 11 AM – 2 PM: infrastructure security, CVE remediation, and lunch.</p>
+        <p>Upcoming and past meetings, with full agendas and how to join.</p>
       </a>
       <a class="link-card" href="{{ .Site.Params.links.signal }}">
         <h2>Group chat</h2>
@@ -38,7 +38,7 @@
   </div>
 </section>
 
-<section class="section sponsors" id="sponsors">
+<section class="section sponsors section-center" id="sponsors">
   <div class="wrap">
     <h2 class="section-head">Backed by</h2>
     <p class="section-sub">RLUG's revival is made possible by our sponsors. Interested in supporting a local Linux community? <a href="mailto:{{ .Site.Params.email }}">Get in touch.</a></p>

@@ -2,7 +2,7 @@
 {{ $e := .Params.event | default dict }}
 {{ $past := lt (partial "meeting-ends.html" .).Unix now.Unix }}
 <article class="section">
-  <div class="wrap page-header">
+  <div class="wrap measure page-header">
     <p class="hero-kicker"><a href="{{ .Parent.RelPermalink }}">← All meetings</a></p>
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p class="page-subtitle">{{ . }}</p>{{ end }}
@@ -21,7 +21,9 @@
     <p class="meeting-actions">
       <a class="btn btn-primary" href="{{ . }}">Register for the meeting</a>
     </p>
-    {{ end }}{{ end }}
+    {{ end }}
+    {{ with $e.registerNote }}<p class="register-note">{{ . }}</p>{{ end }}
+    {{ end }}
 
     {{ if partial "cfp-open.html" . }}{{ partial "cfp.html" . }}{{ end }}
 

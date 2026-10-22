@@ -29,4 +29,10 @@
     </div>
     {{ end }}
   </div>
+
+  <div class="wrap footer-bottom">
+    <p>© {{ now.Year }} Reno Linux Users Group.
+      {{ with $l.github }}This site is <a href="{{ . }}/renolug.org">open source</a>.{{ end }}
+      Built with <a href="https://gohugo.io/">Hugo</a>.</p>
+  </div>
 </footer>

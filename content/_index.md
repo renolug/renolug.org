@@ -1,12 +1,13 @@
 ---
 title: "Home"
 description: "The Reno Linux Users Group (RLUG) is a community for Linux and open source enthusiasts in the Reno / Tahoe area."
+# Shown as the hero lead. Kept out of the body so it isn't printed twice.
+lead: >-
+  The Reno Linux Users Group is a community for people who use, build, and love
+  Linux and open source software in the Reno / Tahoe area. Whether you’re a
+  seasoned sysadmin, a curious newcomer, or somewhere in between, you’re welcome
+  here!
 ---
-
-The **Reno Linux Users Group** is a community for people who use, build, and
-love Linux and open source software in the Reno / Tahoe area. Whether you're a
-seasoned sysadmin, a curious newcomer, or somewhere in between, you're welcome
-here!
 
 Our first meeting since the revival is **Monday, November 2nd** — a morning of
 infrastructure security talks, lunch, and networking.

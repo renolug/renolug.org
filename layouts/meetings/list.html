@@ -10,16 +10,16 @@
   {{- end -}}
 {{- end -}}
 <section class="section">
-  <div class="wrap page-header">
+  <div class="wrap measure page-header">
     <h1>{{ .Title }}</h1>
     {{ with .Params.subtitle }}<p class="page-subtitle">{{ . }}</p>{{ end }}
   </div>
 
-  <div class="wrap prose">
+  <div class="wrap measure prose">
     {{ .Content }}
   </div>
 
-  <div class="wrap">
+  <div class="wrap measure">
     <h2 class="section-head">Upcoming</h2>
     {{ with $upcoming }}
       <ul class="meeting-list">
@@ -42,7 +42,7 @@
 </section>
 
 <section class="section quicklinks">
-  <div class="wrap">
+  <div class="wrap measure">
     <h2 class="section-head">Stay in the loop</h2>
     <p class="section-sub">Meetings are announced on the mailing list and in the group chat first.</p>
     <div class="card-grid">

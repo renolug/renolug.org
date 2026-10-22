@@ -19,21 +19,13 @@ event:
   speakerOrg: "CIQ"
   cost: "Free — everyone welcome, lunch included"
   register: "https://events.ciq.com/reno-lug-tech-consortium-networking"
+  registerNote: "Seats are limited — please register so we know how much food to order."
 
 # Call for presenters. Closes itself once the meeting passes; `deadline` and
 # `note` are optional. See layouts/partials/cfp-open.html.
 cfp:
   open: true
 ---
-
-<div class="callout">
-
-**Our first meeting since the revival is on the books.** Join us on Monday,
-November 2nd for a morning of infrastructure security talks, lunch, and
-networking. Seats are limited — please register so we know how much food to
-order.
-
-</div>
 
 ## Agenda
 

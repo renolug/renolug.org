@@ -6,7 +6,14 @@
     </a>
     <nav class="site-nav" aria-label="Primary">
       <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <label for="nav-toggle" class="nav-toggle-btn" aria-label="Toggle menu">☰</label>
+      <label for="nav-toggle" class="nav-toggle-btn" aria-label="Toggle menu">
+        {{/* Drawn rather than the ☰ character, which has no glyph in the
+             system font stack and falls back to a tofu box. */}}
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </label>
       <ul class="nav-list">
         {{ range .Site.Menus.main }}
           {{ $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
