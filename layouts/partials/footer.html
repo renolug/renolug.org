@@ -12,9 +12,8 @@
         {{ with $l.mailinglist }}<li><a href="{{ . }}">Mailing list</a></li>{{ end }}
         {{ with $l.signal }}<li><a href="{{ . }}">Chat group</a></li>{{ end }}
         {{ with $l.bluesky }}<li><a href="{{ . }}" rel="me">Bluesky</a></li>{{ end }}
-        {{ with $l.github }}<li><a href="{{ . }}">GitHub</a></li>{{ end }}
-        {{ with .Site.Params.email }}<li><a href="mailto:{{ . }}">Email</a></li>{{ end }}
       </ul>
+      {{/* GitHub and email live on the contact page rather than here. */}}
     </div>
 
     {{ with hugo.Data.sponsors.sponsor }}
