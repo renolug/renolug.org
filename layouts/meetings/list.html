@@ -1,0 +1,61 @@
+{{ define "main" }}
+{{- $upcoming := slice -}}
+{{- $past := slice -}}
+{{- range .Pages.ByDate -}}
+  {{- $p := . -}}
+  {{- if ge (partial "meeting-ends.html" .).Unix now.Unix -}}
+    {{- $upcoming = $upcoming | append $p -}}
+  {{- else -}}
+    {{- $past = $past | append $p -}}
+  {{- end -}}
+{{- end -}}
+<section class="section">
+  <div class="wrap page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="page-subtitle">{{ . }}</p>{{ end }}
+  </div>
+
+  <div class="wrap prose">
+    {{ .Content }}
+  </div>
+
+  <div class="wrap">
+    <h2 class="section-head">Upcoming</h2>
+    {{ with $upcoming }}
+      <ul class="meeting-list">
+        {{ range . }}{{ partial "meeting-card.html" . }}{{ end }}
+      </ul>
+    {{ else }}
+      <p class="section-sub">Nothing on the calendar right now. The
+        {{ with site.Params.links.mailinglist }}<a href="{{ . }}">mailing list</a>{{ end }}
+        and {{ with site.Params.links.signal }}<a href="{{ . }}">Signal group</a>{{ end }}
+        get the announcement first.</p>
+    {{ end }}
+
+    {{ with $past }}
+      <h2 class="section-head meeting-list-head">Past meetings</h2>
+      <ul class="meeting-list">
+        {{ range (sort . "Date" "desc") }}{{ partial "meeting-card.html" . }}{{ end }}
+      </ul>
+    {{ end }}
+  </div>
+</section>
+
+<section class="section quicklinks">
+  <div class="wrap">
+    <h2 class="section-head">Stay in the loop</h2>
+    <p class="section-sub">Meetings are announced on the mailing list and in the group chat first.</p>
+    <div class="card-grid">
+      {{ with site.Params.links.mailinglist }}
+      <a class="link-card" href="{{ . }}"><h3>Mailing list</h3><p>Our longest-running home base.</p></a>
+      {{ end }}
+      {{ with site.Params.links.signal }}
+      <a class="link-card" href="{{ . }}"><h3>Signal group</h3><p>Real-time chat and coordination.</p></a>
+      {{ end }}
+      {{ with site.Params.links.bluesky }}
+      <a class="link-card" href="{{ . }}"><h3>Bluesky</h3><p>Announcements and updates.</p></a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

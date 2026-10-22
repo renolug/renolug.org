@@ -4,11 +4,19 @@ title = "Reno Linux Users Group"
 [languages.en]
   label = "English"
   locale = "en-US"
+
+# Meetings are local events; parse and render their times in Reno's zone.
+timeZone = "America/Los_Angeles"
 enableRobotsTXT = true
 
 # No blog yet, so /categories/ and /tags/ would only ever be empty pages
 # cluttering the sitemap.
 disableKinds = ["taxonomy", "term"]
+
+# A meeting's `date` is when it starts, so upcoming meetings are always
+# future-dated. Without this Hugo would refuse to build the very pages we're
+# trying to advertise.
+buildFuture = true
 
 # Don't fail the build over the placeholder emails / draft links.
 ignoreLogs = ['warning-goldmark-raw-html']

@@ -9,5 +9,5 @@ seasoned sysadmin, a curious newcomer, or somewhere in between, you're welcome
 here!
 
 Our first meeting since the revival is **Monday, November 2nd** — a morning of
-infrastructure security talks, lunch, and networking with the Tech Consortium.
+infrastructure security talks, lunch, and networking.
 [See the agenda and register](/meetings).

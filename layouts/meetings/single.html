@@ -1,0 +1,31 @@
+{{ define "main" }}
+{{ $e := .Params.event | default dict }}
+{{ $past := lt (partial "meeting-ends.html" .).Unix now.Unix }}
+<article class="section">
+  <div class="wrap page-header">
+    <p class="hero-kicker"><a href="{{ .Parent.RelPermalink }}">← All meetings</a></p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-subtitle">{{ . }}</p>{{ end }}
+  </div>
+  <div class="wrap prose">
+    {{ if $past }}
+    <div class="callout callout-muted">
+      <p>This meeting has already happened. See <a href="{{ .Parent.RelPermalink }}">all meetings</a>
+      for what's coming up next.</p>
+    </div>
+    {{ end }}
+
+    {{ partial "meeting-facts.html" . }}
+
+    {{ if not $past }}
+    <p class="meeting-actions">
+      {{ with $e.register }}<a class="btn btn-primary" href="{{ . }}">Register for the meeting</a>{{ end }}
+      {{ with site.Params.links.mailinglist }}<a class="btn" href="{{ . }}">Join the mailing list</a>{{ end }}
+      {{ with site.Params.links.signal }}<a class="btn" href="{{ . }}">Join the Signal group</a>{{ end }}
+    </p>
+    {{ end }}
+
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

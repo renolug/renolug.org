@@ -247,6 +247,7 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -.01em; }
 }
 .callout p:first-child { margin-top: 0; }
 .callout p:last-child { margin-bottom: 0; }
+.callout-muted { border-left-color: var(--text-muted); color: var(--text-muted); }
 
 /* ---------- Cards / quick links ---------- */
 .quicklinks { background: var(--bg-alt); border-block: 1px solid var(--border); }
@@ -322,6 +323,57 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -.01em; }
   flex-wrap: wrap;
   gap: .75rem;
   margin: 1.5rem 0;
+}
+
+/* ---------- Meetings index ---------- */
+.meeting-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.meeting-list-head { margin-top: 3rem; }
+.meeting-item {
+  display: flex;
+  gap: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+.meeting-item-date {
+  flex: 0 0 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .1rem;
+  margin: 0;
+  padding: .5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  line-height: 1.1;
+  align-self: flex-start;
+}
+.meeting-item-month {
+  font-family: var(--mono);
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+}
+.meeting-item-day { font-size: 1.6rem; font-weight: 700; color: var(--text); }
+.meeting-item-year { font-size: .78rem; color: var(--text-muted); }
+.meeting-item-body { min-width: 0; }
+.meeting-item-body h3 { margin: 0 0 .4rem; font-size: 1.2rem; }
+.meeting-item-desc { margin: 0 0 .5rem; color: var(--text-muted); }
+.meeting-item-meta { margin: 0; font-size: .9rem; color: var(--text-muted); }
+@media (max-width: 520px) {
+  .meeting-item { flex-direction: column; gap: .85rem; }
+  .meeting-item-date { flex-direction: row; gap: .4rem; align-self: flex-start; }
 }
 
 /* ---------- Agenda ---------- */

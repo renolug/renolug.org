@@ -1,0 +1,10 @@
+{{/*
+  Returns a meeting's end time, falling back to its start when no `event.end`
+  is set. Used to decide whether a meeting is upcoming or past.
+  Usage: {{ $ends := partial "meeting-ends.html" . }}
+*/}}
+{{- $ends := .Date -}}
+{{- with .Params.event -}}
+  {{- with .end }}{{ $ends = time.AsTime . }}{{ end -}}
+{{- end -}}
+{{- return $ends -}}

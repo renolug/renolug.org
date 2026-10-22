@@ -1,0 +1,15 @@
+{{/* Facts table for a single meeting, built from its `event` front matter. */}}
+{{- $e := .Params.event | default dict -}}
+<ul class="meeting-facts">
+  <li><strong>Date</strong> <span>{{ .Date.Format "Monday, January 2, 2006" }}</span></li>
+  <li><strong>Time</strong> <span>{{ .Date.Format "3:04 PM" }}{{ with $e.end }} – {{ (time.AsTime .).Format "3:04 PM" }}{{ end }}</span></li>
+  {{- with $e.venue }}
+  <li><strong>Location</strong> <span>{{ . }}</span></li>
+  {{- end }}
+  {{- with $e.speaker }}
+  <li><strong>Speaker</strong> <span>{{ . }}{{ with $e.speakerOrg }}, {{ . }}{{ end }}</span></li>
+  {{- end }}
+  {{- with $e.cost }}
+  <li><strong>Cost</strong> <span>{{ . }}</span></li>
+  {{- end }}
+</ul>

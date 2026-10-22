@@ -1,7 +1,7 @@
 {{/*
   schema.org JSON-LD. Emits an Organization node on the home page and an Event
   node on any page carrying an `event` map in its front matter (see
-  content/meetings.md). Built as Go maps and passed through jsonify so the
+  content/meetings/). Built as Go maps and passed through jsonify so the
   output is always valid JSON.
 */}}
 {{- $nodes := slice -}}
@@ -26,14 +26,16 @@
   {{- $nodes = $nodes | append $org -}}
 {{- end -}}
 
+{{- $page := . -}}
 {{- with .Params.event -}}
   {{- $address := dict "@type" "PostalAddress" "addressLocality" .locality "addressRegion" .region "addressCountry" "US" -}}
   {{- $event := dict
     "@type" "Event"
-    "name" .name
-    "description" (.description | plainify | chomp)
-    "startDate" .start
-    "endDate" .end
+    "name" (printf "%s: %s" site.Title $page.Title)
+    "url" $page.Permalink
+    "description" ($page.Description | plainify | chomp)
+    "startDate" ($page.Date.Format "2006-01-02T15:04:05-07:00")
+    "endDate" (or .end ($page.Date.Format "2006-01-02T15:04:05-07:00"))
     "eventStatus" "https://schema.org/EventScheduled"
     "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
     "image" ("/img/og.png" | absURL)
@@ -44,10 +46,14 @@
       "price" "0"
       "priceCurrency" "USD"
       "availability" "https://schema.org/InStock"
-      "url" (or .url $.Permalink)
+      "url" (or .register $page.Permalink)
     )
   -}}
-  {{- with .performer }}{{ $event = merge $event (dict "performer" (dict "@type" "Person" "name" .)) }}{{ end -}}
+  {{- with .speaker -}}
+    {{- $performer := dict "@type" "Person" "name" . -}}
+    {{- with $page.Params.event.speakerOrg }}{{ $performer = merge $performer (dict "affiliation" (dict "@type" "Organization" "name" .)) }}{{ end -}}
+    {{- $event = merge $event (dict "performer" $performer) -}}
+  {{- end -}}
   {{- $nodes = $nodes | append $event -}}
 {{- end -}}
 
