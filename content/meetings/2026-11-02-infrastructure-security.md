@@ -12,7 +12,8 @@ date: 2026-11-02T11:00:00-08:00
 # Drives the facts table, the index listing, and the schema.org Event markup.
 event:
   end: "2026-11-02T14:00:00-08:00"
-  venue: "CIQ — Reno Office"
+  venue: "CIQ Global HQ"
+  street: "5340 Kietzke Ln, Suite 103"
   locality: "Reno"
   region: "NV"
   speaker: "Patrick Swartz"

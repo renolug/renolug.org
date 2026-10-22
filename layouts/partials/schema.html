@@ -29,6 +29,7 @@
 {{- $page := . -}}
 {{- with .Params.event -}}
   {{- $address := dict "@type" "PostalAddress" "addressLocality" .locality "addressRegion" .region "addressCountry" "US" -}}
+  {{- with .street }}{{ $address = merge $address (dict "streetAddress" .) }}{{ end -}}
   {{- $event := dict
     "@type" "Event"
     "name" (printf "%s: %s" site.Title $page.Title)

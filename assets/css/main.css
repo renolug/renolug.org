@@ -382,6 +382,7 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -.01em; }
   border-radius: var(--radius);
 }
 .meeting-facts strong { color: var(--accent); }
+.meeting-address { color: var(--text-muted); font-size: .95rem; }
 @media (max-width: 480px) {
   .meeting-facts li { grid-template-columns: 1fr; gap: .15rem; }
 }
