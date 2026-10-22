@@ -289,6 +289,48 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -.01em; }
 }
 .meeting-facts strong { min-width: 6rem; color: var(--accent); }
 
+.meeting-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: 1.5rem 0;
+}
+
+/* ---------- Agenda ---------- */
+.agenda {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  gap: .5rem;
+}
+.agenda li {
+  display: flex;
+  gap: 1rem;
+  padding: .75rem 1rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.agenda strong {
+  flex: 0 0 11rem;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.agenda ul { margin: .5rem 0 0; padding-left: 1.25rem; color: var(--text-muted); }
+.agenda ul li {
+  display: list-item;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  margin: .2rem 0;
+}
+@media (max-width: 640px) {
+  .agenda li { flex-direction: column; gap: .35rem; }
+  .agenda strong { flex: none; }
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   margin-top: 3rem;

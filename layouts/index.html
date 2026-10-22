@@ -6,7 +6,7 @@
     <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
     <p class="hero-lead">{{ .Content | plainify | truncate 260 }}</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="{{ "/meetings" | relURL }}">Upcoming meetings</a>
+      <a class="btn btn-primary" href="{{ "/meetings" | relURL }}">Nov 2 — our first meeting</a>
       {{ with .Site.Params.links.mailinglist }}<a class="btn" href="{{ . }}">Join the mailing list</a>{{ end }}
       {{ with .Site.Params.links.signal }}<a class="btn" href="{{ . }}">Join the group chat</a>{{ end }}
     </div>
@@ -24,7 +24,7 @@
     <div class="card-grid">
       <a class="link-card" href="{{ "/meetings" | relURL }}">
         <h2>Meetings</h2>
-        <p>Our first meeting since the revival is being scheduled — details soon.</p>
+        <p>Monday, November 2nd, 11 AM – 2 PM: infrastructure security, CVE remediation, and lunch.</p>
       </a>
       <a class="link-card" href="{{ .Site.Params.links.signal }}">
         <h2>Group chat</h2>

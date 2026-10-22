@@ -6,30 +6,92 @@ description: "Details on upcoming Reno Linux Users Group meetings."
 
 <div class="callout">
 
-The date, time, and venue are still being finalized. The fastest way
-to find out when and where is to join the mailing list or the Signal group —
-we'll announce it there first.
+**Our first meeting since the revival is on the books.** RLUG is teaming up with
+the Tech Consortium on Monday, November 2nd for a morning of infrastructure
+security talks, lunch, and networking. Seats are limited — please register so we
+know how much food to order.
 
 </div>
 
 ## Next meeting
 
+### Infrastructure Security, CVE Remediation & Networking
+
 <ul class="meeting-facts">
-  <li><strong>Date</strong> <span>August 13th, 2026 (Tentative)</span></li>
-  <li><strong>Time</strong> <span>TBD</span></li>
-  <li><strong>Location</strong> <span>CIQ - Reno Office</span></li>
-  <li><strong>Cost</strong> <span>Free — everyone welcome</span></li>
+  <li><strong>Date</strong> <span>Monday, November 2nd, 2026</span></li>
+  <li><strong>Time</strong> <span>11:00 AM – 2:00 PM</span></li>
+  <li><strong>Location</strong> <span>CIQ — Reno Office</span></li>
+  <li><strong>Speaker</strong> <span>Patrick Swartz, CIQ</span></li>
+  <li><strong>Cost</strong> <span>Free — everyone welcome, lunch included</span></li>
 </ul>
 
-[Join the mailing list](https://groups.google.com/g/renolug) ·
-[Join the Signal group](/signal)
+<p class="meeting-actions">
+  <a class="btn btn-primary" href="https://events.ciq.com/reno-lug-tech-consortium-networking">Register for the meeting</a>
+  <a class="btn" href="https://groups.google.com/g/renolug">Join the mailing list</a>
+  <a class="btn" href="/signal">Join the Signal group</a>
+</p>
+
+## Agenda
+
+<ul class="agenda">
+  <li>
+    <strong>11:00 – 11:20 AM</strong>
+    <div><b>Welcome &amp; networking.</b> Introductions and refreshments, plus an
+    overview of the day.</div>
+  </li>
+  <li>
+    <strong>11:20 – 11:35 AM</strong>
+    <div><b>State of enterprise Linux &amp; infrastructure security.</b> The
+    evolving security landscape, and balancing security, compliance, and
+    operational efficiency.</div>
+  </li>
+  <li>
+    <strong>11:35 AM – 12:20 PM</strong>
+    <div><b>Featured session: CVE remediation &amp; securing your
+    infrastructure</b> — Patrick Swartz, CIQ.
+      <ul>
+        <li>Understanding CVEs and their operational impact</li>
+        <li>Identifying, prioritizing, and remediating vulnerabilities</li>
+        <li>Reducing exposure through proactive patching</li>
+        <li>Linux hardening, compliance, and security best practices</li>
+        <li>Securing infrastructure without disrupting critical workloads</li>
+      </ul>
+    </div>
+  </li>
+  <li>
+    <strong>12:20 – 12:40 PM</strong>
+    <div><b>Q&amp;A and technical discussion.</b> Open discussion with Patrick,
+    real-world security challenges, and shared experiences.</div>
+  </li>
+  <li>
+    <strong>12:40 – 1:15 PM</strong>
+    <div><b>Lunch &amp; networking.</b> Food and informal conversation with peers
+    from across the Reno tech community.</div>
+  </li>
+  <li>
+    <strong>1:15 – 1:40 PM</strong>
+    <div><b>Community roundtable: the future of Linux, HPC &amp; AI.</b> Emerging
+    trends, open source collaboration, and where local organizations can work
+    together.</div>
+  </li>
+  <li>
+    <strong>1:40 – 2:00 PM</strong>
+    <div><b>Open networking &amp; closing remarks.</b> Keep talking shop, and hear
+    what's next for RLUG and the Tech Consortium.</div>
+  </li>
+</ul>
+
+## Who should attend
+
+System administrators, infrastructure architects, security and DevOps engineers,
+HPC and AI practitioners, IT leaders, students, and anyone curious about open
+source. You do not need to be an expert — bring your questions, your projects,
+or just your curiosity.
 
 ## What to expect
 
-Meetings are informal and friendly. Expect a mix of short talks and demos,
-open Q&A and troubleshooting, and plenty of time to just talk shop. You do not
-need to be an expert — bring your questions, your projects, or just your
-curiosity.
+Meetings are informal and friendly. Expect a mix of short talks and demos, open
+Q&A and troubleshooting, and plenty of time to just talk shop.
 
 Got an idea for a talk, a demo, or a topic you'd like to see covered? We'd love
 to hear it. Reach out on the mailing list or in the Signal group.
